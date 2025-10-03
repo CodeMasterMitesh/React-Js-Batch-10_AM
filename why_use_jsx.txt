@@ -1,0 +1,29 @@
+Why use .jsx files?
+
+Clarity & Readability: You can write HTML-like markup directly inside JS.
+
+Component-based structure: Each component can be a separate .jsx file.
+
+Tooling support: Editors like VSCode give syntax highlighting, auto-completion, and linting for JSX.
+
+Better maintenance: Easier to see structure of UI and logic together.
+
+Note: Using .jsx is optional. You can write React components in .js files too. But .jsx makes it clear that this file contains JSX code.
+
+
+example of hooks
+import React,{useState} from "react";
+
+const Counter = () =>{
+    const [count,setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>Count :{count}</h1>
+            <button onClick={()=> setCount(count + 1)}>Increase</button>
+        </div>
+
+    )
+} 
+
+export default Counter;

@@ -1,0 +1,32 @@
+ul{
+    width: 500px;
+    border: 2px solid black;
+    list-style-type: none;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+ul p span{
+    width: 25%;
+    display: inline-block;
+}
+ul li{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid black;
+}
+ul li p{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: rgb(97, 238, 246);
+}
+ul .red{
+    background-color: red;
+}
+ul .green{
+    background-color: green;
+}

@@ -8,6 +8,7 @@ import Button from './components/ButtonUi.jsx'
 import Hero from './components/Hero.jsx'
 import Counter from './components/Counter.jsx'
 import {RecactFragment, Text} from './components/RecactFragment.jsx'
+import { ConditionLoop } from './components/ConditionLoops.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,8 +18,9 @@ function App() {
     {/* <Nav/>
     <Hero/>
     <Counter/> */}
-    <RecactFragment/>
-    <Text name="Chirag" education="B.TECH" PassingYear="2022" />
+    {/* <RecactFragment/> */}
+    {/* <Text name="Chirag" education="B.TECH" PassingYear="2022" /> */}
+    <ConditionLoop/>
     </>
   )
 }

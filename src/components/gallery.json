@@ -1,0 +1,26 @@
+[
+    {
+        "title" : "Process 1",
+        "image" : "process_1_1.jpg",
+        "text" : "Text About Image 1",
+        "type" : "newArrival"
+    },
+    {
+        "title" : "Process 2",
+        "image" : "process_1_2.jpg",
+        "text" : "Text About Image 2",
+        "type" : "newArrival"
+    },
+    {
+        "title" : "Process 3",
+        "image" : "process_1_3.jpg",
+        "text" : "Text About Image 3",
+        "type" : "featureProduct"
+    },
+    {
+        "title" : "Process 4",
+        "image" : "process_1_4.jpg",
+        "text" : "Text About Image 4",
+        "type" : "featureProduct"
+    }
+]

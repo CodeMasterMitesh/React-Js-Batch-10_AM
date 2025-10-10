@@ -9,6 +9,7 @@ import Counter from './components/Counter.jsx'
 import {RecactFragment, Text} from './components/RecactFragment.jsx'
 import { ConditionLoop } from './components/ConditionLoops.jsx'
 import {NewArrivalGallery,FeatureGallery} from './components/Gallery.jsx'
+import { ContactForm } from './components/ContactForm.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -16,8 +17,10 @@ function App() {
   return (
     <>
       <Nav logoName="Airon Web Solution" homeLink="https://google.com"/>
-      <NewArrivalGallery name="New Arrival Gallery"/>
-      <FeatureGallery name="Feature Product Gallery"/>
+      {/* <Counter/> */}
+      {/* <NewArrivalGallery name="New Arrival Gallery"/>
+      <FeatureGallery name="Feature Product Gallery"/> */}
+      <ContactForm/>
     </>
   )
 }

@@ -10,6 +10,7 @@ import {RecactFragment, Text} from './components/RecactFragment.jsx'
 import { ConditionLoop } from './components/ConditionLoops.jsx'
 import {NewArrivalGallery,FeatureGallery} from './components/Gallery.jsx'
 import { ContactForm } from './components/ContactForm.jsx'
+import {ContactFormNew} from './components/ContactFormNew.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,7 +21,8 @@ function App() {
       {/* <Counter/> */}
       {/* <NewArrivalGallery name="New Arrival Gallery"/>
       <FeatureGallery name="Feature Product Gallery"/> */}
-      <ContactForm/>
+      {/* <ContactForm/> */}
+      <ContactFormNew/>
     </>
   )
 }

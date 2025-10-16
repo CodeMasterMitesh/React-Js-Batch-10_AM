@@ -11,6 +11,8 @@ import { ConditionLoop } from './components/ConditionLoops.jsx'
 import {NewArrivalGallery,FeatureGallery} from './components/Gallery.jsx'
 import { ContactForm } from './components/ContactForm.jsx'
 import {ContactFormNew} from './components/ContactFormNew.jsx'
+import Gallery from './components/Gallery.module.css';
+import ButtonUi from './components/ButtonUi.module.css';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -19,10 +21,10 @@ function App() {
     <>
       <Nav logoName="Airon Web Solution" homeLink="https://google.com"/>
       {/* <Counter/> */}
-      {/* <NewArrivalGallery name="New Arrival Gallery"/>
-      <FeatureGallery name="Feature Product Gallery"/> */}
+      <NewArrivalGallery name="New Arrival Gallery"/>
+      <FeatureGallery name="Feature Product Gallery"/>
       {/* <ContactForm/> */}
-      <ContactFormNew/>
+      {/* <ContactFormNew/> */}
     </>
   )
 }

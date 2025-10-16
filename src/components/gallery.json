@@ -1,24 +1,49 @@
 [
     {
-        "title" : "Process 1",
+        "title" : "Image 1",
         "image" : "process_1_1.jpg",
         "text" : "Text About Image 1",
         "type" : "newArrival"
     },
     {
-        "title" : "Process 2",
+        "title" : "Image 2",
         "image" : "process_1_2.jpg",
         "text" : "Text About Image 2",
         "type" : "newArrival"
     },
     {
-        "title" : "Process 3",
+        "title" : "Image 3",
         "image" : "process_1_3.jpg",
         "text" : "Text About Image 3",
         "type" : "featureProduct"
     },
     {
-        "title" : "Process 4",
+        "title" : "Image 4",
+        "image" : "process_1_4.jpg",
+        "text" : "Text About Image 4",
+        "type" : "featureProduct"
+    },
+
+     {
+        "title" : "Image 5",
+        "image" : "process_1_1.jpg",
+        "text" : "Text About Image 1",
+        "type" : "newArrival"
+    },
+    {
+        "title" : "Image 6",
+        "image" : "process_1_2.jpg",
+        "text" : "Text About Image 2",
+        "type" : "newArrival"
+    },
+    {
+        "title" : "Image 7",
+        "image" : "process_1_3.jpg",
+        "text" : "Text About Image 3",
+        "type" : "featureProduct"
+    },
+    {
+        "title" : "Image 8",
         "image" : "process_1_4.jpg",
         "text" : "Text About Image 4",
         "type" : "featureProduct"

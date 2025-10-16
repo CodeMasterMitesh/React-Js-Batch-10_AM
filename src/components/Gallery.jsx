@@ -1,11 +1,14 @@
 import React from "react";
 import data from './gallery.json'
+import style from './Gallery.module.css'
+import Button from './ButtonUi.jsx'
 
+// console.log(style.heading);
 export const NewArrivalGallery = ({name})=>{
     return (
         <> 
-        <div className="heading"><h2>{name}</h2></div>
-        <div className="main_gallery">
+        <div className={style.heading}><h2>{name}</h2></div>
+        <div className={style.main_gallery}>
             {data.map((ele,index)=>{
                 if(ele.type == "newArrival"){
                     return <Gallery key={index} title={ele.title} image={ele.image} text={ele.text} />
@@ -14,15 +17,14 @@ export const NewArrivalGallery = ({name})=>{
             })}
         </div> 
         </>
-        
     )
 }
 
 export const FeatureGallery = ({name})=>{
     return (
         <> 
-        <div className="heading"><h2>{name}</h2></div>
-        <div className="main_gallery">
+        <div className={style.heading}><h2>{name}</h2></div>
+        <div className={style.main_gallery}>
             {data.map((ele,index)=>{
                if(ele.type == "featureProduct"){
                     return <Gallery key={index} title={ele.title} image={ele.image} text={ele.text} />
@@ -36,13 +38,14 @@ export const FeatureGallery = ({name})=>{
 const Gallery = ({text,title,image})=>{
     return (
         <>
-            <div className="gallery">
-                <div className="img">
+            <div className={style.gallery}>
+                <div className={style.img}>
                     <img src={'../images/'+ image} width="200px" alt="" />
                 </div>
-                <div className="title">
+                <div className={style.title}>
                     <h3>{title}</h3>
                     <p>{text}</p>
+                    <Button href='https://google.cpom' value='Click Me'/>
                 </div>
             </div>
         </>

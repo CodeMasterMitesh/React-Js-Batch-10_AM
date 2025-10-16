@@ -1,0 +1,8 @@
+.btn{
+    display: inline-block;
+    background-color: lightcoral;
+    border-radius: 12px;
+    width: 100px;
+    padding: 5px;
+    color: white;
+}

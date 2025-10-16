@@ -66,19 +66,6 @@ nav ul li a{
   font-weight: bold;
   color: black;
 }
-.heading{
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-.heading h2{
-  text-align: center;
-}
-.main_gallery{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 #form{
   width: 50%;
   margin: auto;

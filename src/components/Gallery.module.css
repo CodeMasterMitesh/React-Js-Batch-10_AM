@@ -26,6 +26,9 @@
 .gallery .title{
     padding: 10px;
 }
+.title-text{
+    color: tomato;
+}
 .gallery .title h3,.gallery .title p{
     margin-bottom: 5px;
 }

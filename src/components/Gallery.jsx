@@ -2,7 +2,7 @@ import React from "react";
 import data from './gallery.json'
 import style from './Gallery.module.css'
 import Button from './ButtonUi.jsx'
-
+// console.log(style);
 // console.log(style.heading);
 export const NewArrivalGallery = ({name})=>{
     return (
@@ -43,9 +43,9 @@ const Gallery = ({text,title,image})=>{
                     <img src={'../images/'+ image} width="200px" alt="" />
                 </div>
                 <div className={style.title}>
-                    <h3>{title}</h3>
+                    <h3 className={style["title-text"]}>{title}</h3>
                     <p>{text}</p>
-                    <Button href='https://google.cpom' value='Click Me'/>
+                    <Button href='https://google.com' value='Click Me'/>
                 </div>
             </div>
         </>

@@ -13,6 +13,8 @@ import { ContactForm } from './components/ContactForm.jsx'
 import {ContactFormNew} from './components/ContactFormNew.jsx'
 import Gallery from './components/Gallery.module.css';
 import ButtonUi from './components/ButtonUi.module.css';
+import { EventHandler } from './components/EventHanlder.jsx'
+import { WelcomeMessage } from './components/EventHanlder.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -25,6 +27,8 @@ function App() {
       <FeatureGallery name="Feature Product Gallery"/>
       {/* <ContactForm/> */}
       {/* <ContactFormNew/> */}
+      <EventHandler/>
+      <WelcomeMessage Click={()=>handleClick('Welcome to the Event Handler!')} mouseEnter={ () => alert('Mouse Entered!')} style={{marginTop: '20px', padding: '10px', border: '1px solid black', display: 'inline-block', backgroundColor: 'lightgray'}} />
     </>
   )
 }

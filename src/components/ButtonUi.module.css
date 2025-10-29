@@ -1,8 +1,16 @@
-.btn{
-    display: inline-block;
-    background-color: lightcoral;
-    border-radius: 12px;
-    width: 100px;
-    padding: 5px;
-    color: white;
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff7b00, #ffb300);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff9d00, #ffcb00);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
 }

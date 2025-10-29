@@ -1,53 +1,59 @@
 import React from "react";
-import data from './gallery.json'
-import style from './Gallery.module.css'
-import Button from './ButtonUi.jsx'
-// console.log(style);
-// console.log(style.heading);
-export const NewArrivalGallery = ({name})=>{
-    return (
-        <> 
-        <div className={style.heading}><h2>{name}</h2></div>
-        <div className={style.main_gallery}>
-            {data.map((ele,index)=>{
-                if(ele.type == "newArrival"){
-                    return <Gallery key={index} title={ele.title} image={ele.image} text={ele.text} />
-                }
-                // console.log(ele.type)
-            })}
-        </div> 
-        </>
-    )
-}
+import data from './gallery.json';
+import style from './Gallery.module.css';
+import Button from './ButtonUi.jsx';
 
-export const FeatureGallery = ({name})=>{
-    return (
-        <> 
-        <div className={style.heading}><h2>{name}</h2></div>
-        <div className={style.main_gallery}>
-            {data.map((ele,index)=>{
-               if(ele.type == "featureProduct"){
-                    return <Gallery key={index} title={ele.title} image={ele.image} text={ele.text} />
-                }
-            })}
-        </div> 
-        </>
-        
-    )
-}
-const Gallery = ({text,title,image})=>{
-    return (
-        <>
-            <div className={style.gallery}>
-                <div className={style.img}>
-                    <img src={'../images/'+ image} width="200px" alt="" />
-                </div>
-                <div className={style.title}>
-                    <h3 className={style["title-text"]}>{title}</h3>
-                    <p>{text}</p>
-                    <Button href='https://google.com' value='Click Me'/>
-                </div>
-            </div>
-        </>
-    )
-}
+export const NewArrivalGallery = ({ name }) => {
+  const filteredData = data.filter((ele) => ele.type === "newArrival");
+    // console.log(filteredData);
+  return (
+    <section className={style.section}>
+      <h2 className={style.heading}>{name}</h2>
+      <div className={style.gallery_grid}>
+        {filteredData.map((ele, index) => (
+          <GalleryCard
+            key={index}
+            title={ele.title}
+            image={ele.image}
+            text={ele.text}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const FeatureGallery = ({ name }) => {
+  const filteredData = data.filter((ele) => ele.type === "featureProduct");
+//   console.log(filteredData);
+  return (
+    <section className={style.section}>
+      <h2 className={style.heading}>{name}</h2>
+      <div className={style.gallery_grid}>
+        {filteredData.map((ele, index) => (
+          <GalleryCard
+            key={index}
+            title={ele.title}
+            image={ele.image}
+            text={ele.text}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const GalleryCard = ({ text, title, image }) => {
+  return (
+    <div className={style.card}>
+      <div className={style.image_container}>
+        <img src={`../images/${image}`} alt={title} className={style.image} />
+      </div>
+      <div className={style.card_content}>
+        <h3 className={style.card_title}>{title}</h3>
+        <p className={style.card_text}>{text}</p>
+        <Button href="https://google.com" value="Explore Now" />
+      </div>
+    </div>
+  );
+};

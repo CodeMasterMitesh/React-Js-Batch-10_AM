@@ -27,8 +27,8 @@ function App() {
       <FeatureGallery name="Feature Product Gallery"/>
       {/* <ContactForm/> */}
       {/* <ContactFormNew/> */}
-      <EventHandler/>
-      <WelcomeMessage Click={()=>handleClick('Welcome to the Event Handler!')} mouseEnter={ () => alert('Mouse Entered!')} style={{marginTop: '20px', padding: '10px', border: '1px solid black', display: 'inline-block', backgroundColor: 'lightgray'}} />
+      {/* <EventHandler/> */}
+      {/* <WelcomeMessage Click={()=>handleClick('Welcome to the Event Handler!')} mouseEnter={ () => alert('Mouse Entered!')} style={{marginTop: '20px', padding: '10px', border: '1px solid black', display: 'inline-block', backgroundColor: 'lightgray'}} /> */}
     </>
   )
 }

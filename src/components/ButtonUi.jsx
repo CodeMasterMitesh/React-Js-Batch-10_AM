@@ -1,9 +1,10 @@
 import React from "react";
-import style from './ButtonUi.module.css'
+import style from "./ButtonUi.module.css";
 
-const  Button = ({value,href}) =>{
-    return (
-        <a className={style.btn} href={href}>{value}</a>
-    )
+export default function Button({ href, value }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={style.btn}>
+      {value}
+    </a>
+  );
 }
-export default Button;

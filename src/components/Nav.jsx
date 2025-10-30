@@ -1,41 +1,182 @@
-import React,{useState} from "react";
-// props example 
-// function Nav(props){
-// Props with Destructuring 
-function Nav({logoName,homeLink}){
-    const [currency,setCurrency] = useState("None");
-    // console.log(currency);
-    // console.log(e);
-    // console.log(setCurrency);
-    return (
-        <>
-            <nav>
-                <div className="logo">
-                    <h1>{logoName}</h1>
-                    {/* <h1>{props.logoName}</h1> */}
-                </div>
-                <div className="menu">
-                    <ul>
-                        <li><a href={homeLink}>Home</a></li> 
-                        {/* <li><a href={props.homeLink}>Home</a></li>  */}
-                        <li><a href="/">About</a></li>
-                        <li><a href="/">Services</a></li>
-                        <li><a href="/">Blogs</a></li>
-                        <li><a href="/">Contact Us</a></li>
-                        <li>
-                            <select onChange={(e)=> setCurrency(e.target.value)} name="currency" id="currency">
-                                <option value="INR">INR</option>
-                                <option value="CAD">CAD</option>
-                                <option value="US DOLLAR">US DOLLAR</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            {/* <h2>Selected Currency is : {currency}</h2> */}
-        </>
-        
-    )
+import React, { useState } from "react";
+import style from "./Nav.module.css";
+import { ShoppingCart, MapPin, User, Search, Heart, Menu, X, Bell } from "lucide-react";
+
+function Nav({ logoName }) {
+  const [currency, setCurrency] = useState("INR");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showNotifications, setShowNotifications] = useState(false);
+
+  const categories = [
+    "Electronics", "Fashion", "Home & Kitchen", "Beauty", "Sports", 
+    "Books", "Toys", "Automotive", "Grocery"
+  ];
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log("Searching for:", searchQuery);
+      // Add your search logic here
+    }
+  };
+
+  return (
+    <header className={style.header}>
+      {/* Top Banner */}
+      <div className={style.topBanner}>
+        <p>🎉 Free shipping on orders over $50! Shop now</p>
+      </div>
+
+      {/* Main Navbar */}
+      <nav className={style.navbar}>
+        {/* Logo & Mobile Menu */}
+        <div className={style.leftSection}>
+          <button 
+            className={style.mobileMenuBtn}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+          
+          <div className={style.logo}>
+            <div className={style.logoIcon}>🛍️</div>
+            <h1>{logoName}</h1>
+          </div>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className={style.centerSection}>
+          <nav className={style.mainNav}>
+            {categories.slice(0, 6).map((category) => (
+              <a key={category} href="/" className={style.navLink}>
+                {category}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        {/* Right Section */}
+        <div className={style.rightSection}>
+          {/* Search Bar */}
+          <form className={style.search} onSubmit={handleSearch}>
+            <div className={style.searchContainer}>
+              <Search size={18} className={style.searchIcon} />
+              <input
+                type="text"
+                placeholder="Search for products, brands and more..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={style.searchInput}
+              />
+              <button type="submit" className={style.searchBtn}>
+                Search
+              </button>
+            </div>
+          </form>
+
+          {/* User Actions */}
+          <div className={style.actions}>
+            {/* Location */}
+            <div className={style.location}>
+              <MapPin size={16} />
+              <div className={style.locationText}>
+                <span className={style.deliverTo}>Deliver to</span>
+                <span className={style.locationName}>Ahmedabad</span>
+              </div>
+            </div>
+
+            {/* Notifications */}
+            <div className={style.notificationWrapper}>
+              <button 
+                className={style.actionBtn}
+                onClick={() => setShowNotifications(!showNotifications)}
+              >
+                <Bell size={20} />
+                <span className={style.notificationBadge}>3</span>
+              </button>
+            </div>
+
+            {/* Wishlist */}
+            <button className={style.actionBtn}>
+              <Heart size={20} />
+              <span>Wishlist</span>
+            </button>
+
+            {/* Account */}
+            <div className={style.account}>
+              <User size={18} />
+              <div className={style.accountText}>
+                <span className={style.greeting}>Hello,</span>
+                <span className={style.signIn}>Sign in</span>
+              </div>
+            </div>
+
+            {/* Currency */}
+            <select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              className={style.currencySelect}
+            >
+              <option value="INR">₹ INR</option>
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+            </select>
+
+            {/* Cart */}
+            <div className={style.cart}>
+              <div className={style.cartIcon}>
+                <ShoppingCart size={22} />
+                <span className={style.cartCount}>5</span>
+              </div>
+              <div className={style.cartText}>
+                <span className={style.cartLabel}>Cart</span>
+                <span className={style.cartAmount}>₹2,499</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className={style.mobileMenu}>
+          <div className={style.mobileCategories}>
+            {categories.map((category) => (
+              <a key={category} href="/" className={style.mobileNavLink}>
+                {category}
+              </a>
+            ))}
+          </div>
+          <div className={style.mobileActions}>
+            <a href="/" className={style.mobileAction}>
+              <User size={18} />
+              <span>My Account</span>
+            </a>
+            <a href="/" className={style.mobileAction}>
+              <Heart size={18} />
+              <span>Wishlist</span>
+            </a>
+            <a href="/" className={style.mobileAction}>
+              <Bell size={18} />
+              <span>Notifications</span>
+            </a>
+          </div>
+        </div>
+      )}
+
+      {/* Category Bar */}
+      <div className={style.categoryBar}>
+        <div className={style.categoryContainer}>
+          {categories.map((category) => (
+            <a key={category} href="/" className={style.categoryLink}>
+              {category}
+            </a>
+          ))}
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export default Nav;

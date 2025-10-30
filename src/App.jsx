@@ -8,23 +8,27 @@ import Hero from './components/Hero.jsx'
 import Counter from './components/Counter.jsx'
 import {RecactFragment, Text} from './components/RecactFragment.jsx'
 import { ConditionLoop } from './components/ConditionLoops.jsx'
-import {NewArrivalGallery,FeatureGallery} from './components/Gallery.jsx'
 import { ContactForm } from './components/ContactForm.jsx'
 import {ContactFormNew} from './components/ContactFormNew.jsx'
 import Gallery from './components/Gallery.module.css';
 import ButtonUi from './components/ButtonUi.module.css';
 import { EventHandler } from './components/EventHanlder.jsx'
 import { WelcomeMessage } from './components/EventHanlder.jsx'
+import HeroBanner from "./components/HeroBanner.jsx";
+import {ProductGallery} from "./components/ProductGallery.jsx";
+import { EventPropogation } from './components/EventPropogation.jsx' 
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Nav logoName="Airon Web Solution" homeLink="https://google.com"/>
+      {/* <EventPropogation/> */}
+      <Nav logoName="ShopEase" homeLink="/"/>
+      <HeroBanner/>
+      <ProductGallery name="New Arrivals" type="newArrival" />
+      <ProductGallery name="Featured Products" type="featureProduct" />
       {/* <Counter/> */}
-      <NewArrivalGallery name="New Arrival Gallery"/>
-      <FeatureGallery name="Feature Product Gallery"/>
       {/* <ContactForm/> */}
       {/* <ContactFormNew/> */}
       {/* <EventHandler/> */}

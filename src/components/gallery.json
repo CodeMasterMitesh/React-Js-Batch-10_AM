@@ -1,51 +1,18 @@
 [
-    {
-        "title" : "Image 1",
-        "image" : "process_1_1.jpg",
-        "text" : "Text About Image 1",
-        "type" : "newArrival"
-    },
-    {
-        "title" : "Image 2",
-        "image" : "process_1_2.jpg",
-        "text" : "Text About Image 2",
-        "type" : "newArrival"
-    },
-    {
-        "title" : "Image 3",
-        "image" : "process_1_3.jpg",
-        "text" : "Text About Image 3",
-        "type" : "featureProduct"
-    },
-    {
-        "title" : "Image 4",
-        "image" : "process_1_4.jpg",
-        "text" : "Text About Image 4",
-        "type" : "featureProduct"
-    },
-
-     {
-        "title" : "Image 5",
-        "image" : "process_1_1.jpg",
-        "text" : "Text About Image 1",
-        "type" : "newArrival"
-    },
-    {
-        "title" : "Image 6",
-        "image" : "process_1_2.jpg",
-        "text" : "Text About Image 2",
-        "type" : "newArrival"
-    },
-    {
-        "title" : "Image 7",
-        "image" : "process_1_3.jpg",
-        "text" : "Text About Image 3",
-        "type" : "featureProduct"
-    },
-    {
-        "title" : "Image 8",
-        "image" : "process_1_4.jpg",
-        "text" : "Text About Image 4",
-        "type" : "featureProduct"
-    }
+  {
+    "title": "Wireless Headphones",
+    "image": "headphone.jpg",
+    "text": "High-quality sound and long battery life.",
+    "price": 2499,
+    "rating": 4,
+    "type": "newArrival"
+  },
+  {
+    "title": "Smart Watch",
+    "image": "watch.jpg",
+    "text": "Track fitness and notifications on the go.",
+    "price": 3299,
+    "rating": 5,
+    "type": "featureProduct"
+  }
 ]

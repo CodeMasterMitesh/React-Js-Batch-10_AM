@@ -45,6 +45,7 @@ export const ContactForm = ()=>{
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
+            <p>{formData.name} {formData.lastname} {formData.email} {formData.mobile}</p>
         </>
         
         )

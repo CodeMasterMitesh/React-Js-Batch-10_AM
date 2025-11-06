@@ -18,13 +18,15 @@ import HeroBanner from "./components/HeroBanner.jsx";
 import {ProductGallery} from "./components/ProductGallery.jsx";
 import { EventPropogation } from './components/EventPropogation.jsx'
 import { ArrayOfObjectState } from './components/ArrayOfObjectState.jsx';
+import { LearUseEffects } from './components/hooks/LearUseEffects.jsx';
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <ArrayOfObjectState/>
+    <LearUseEffects />
+      {/* <ArrayOfObjectState/> */}
       {/* <EventPropogation/> */}
       {/* <Nav logoName="ShopEase" homeLink="/"/>
       <HeroBanner/>

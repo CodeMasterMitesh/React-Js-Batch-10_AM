@@ -19,13 +19,21 @@ import {ProductGallery} from "./components/ProductGallery.jsx";
 import { EventPropogation } from './components/EventPropogation.jsx'
 import { ArrayOfObjectState } from './components/ArrayOfObjectState.jsx';
 import { LearnUseEffect } from './components/hooks/LearUseEffects.jsx';
+import { UseEffectExample } from './components/hooks/UseEffectExample.jsx'
+import { DogsApi } from './components/hooks/DogsApi.jsx'
+import { DogsApiAsyncAwait } from './components/hooks/DogsApiAsyncAwait.jsx'
+import { UseRef } from './components/hooks/UseRef.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-    <LearnUseEffect />
+    <UseRef />
+    {/* <DogsApiAsyncAwait /> */}
+    {/* <DogsApi /> */}
+    {/* <UseEffectExample /> */}
+    {/* <LearnUseEffect /> */}
       {/* <ArrayOfObjectState/> */}
       {/* <EventPropogation/> */}
       {/* <Nav logoName="ShopEase" homeLink="/"/>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./Nav.module.css";
 import { ShoppingCart, MapPin, User, Search, Heart, Menu, X, Bell } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 
 function Nav({ logoName }) {
   const [currency, setCurrency] = useState("INR");
@@ -174,6 +175,12 @@ function Nav({ logoName }) {
             </a>
           ))}
         </div>
+      </div>
+      <div>
+        <Link to="/about">About</Link>
+        <NavLink to="/contact" className={({ isActive }) => (isActive ? style.active : "")}>
+          Contact
+        </NavLink>
       </div>
     </header>
   );

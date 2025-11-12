@@ -1,0 +1,3 @@
+1)  npm install react-router-dom
+2) In your src/main.jsx (or main.tsx for TypeScript) file, import BrowserRouter and wrap your App component with it.
+3) In your src/App.jsx (or App.tsx), import Routes and Route from react-router-dom and define your application's routes.

@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import { About } from './pages/about.jsx'
 import { Home } from './pages/Home.Jsx'
 import { Contact } from './pages/Contact.jsx';
+import { ForwardRef } from './components/hooks/forwardRef.jsx';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/forwardref" element={<ForwardRef />} />
       </Routes>
     </>
   )

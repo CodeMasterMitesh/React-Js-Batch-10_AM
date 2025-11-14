@@ -6,6 +6,7 @@ import { About } from './pages/about.jsx'
 import { Home } from './pages/Home.Jsx'
 import { Contact } from './pages/Contact.jsx';
 import { ForwardRef } from './components/hooks/forwardRef.jsx';
+import { UseId } from './components/hooks/UseId.jsx';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/forwardref" element={<ForwardRef />} />
+        <Route path="/useid" element={<UseId />} />
       </Routes>
     </>
   )

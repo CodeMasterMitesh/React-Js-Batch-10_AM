@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./HeroBanner.module.css";
+import { useContext } from "react";
+import { MyContext  } from "../components/hooks/ContextApi.jsx";
 
 const banners = [
   "slider-25.jpg",
@@ -9,6 +11,8 @@ const banners = [
 
 const HeroBanner = () => {
   const [current, setCurrent] = useState(0);
+  const value = useContext(MyContext).value;
+  const data = useContext(MyContext).data;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -27,6 +31,8 @@ const HeroBanner = () => {
       <div className={style.overlay_content}>
         <h2>Welcome to <span>ShopEase</span></h2>
         <p>Your one-stop destination for everything you love.</p>
+        <p>{value}</p>
+        <p>{data}</p>
         <a href="/" className={style.cta}>Start Shopping</a>
       </div>
     </section>

@@ -8,6 +8,7 @@ import { Contact } from './pages/Contact.jsx';
 import { ForwardRef } from './components/hooks/forwardRef.jsx';
 import { UseId } from './components/hooks/UseId.jsx';
 import { PropsDrilling } from './components/hooks/PropsDrilling.jsx';
+import { ContextProvider } from './components/hooks/ContextApi.jsx';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
         <Route path="/useid" element={<UseId />} />
         <Route path="/propsdrilling" element={<PropsDrilling />} />
       </Routes>
+      <ContextProvider>
+        <Home/>
+      </ContextProvider>
     </>
   )
 }

@@ -11,23 +11,24 @@ import { PropsDrilling } from './components/hooks/PropsDrilling.jsx';
 import { ContextProvider } from './components/hooks/ContextApi.jsx';
 
 
+
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/forwardref" element={<ForwardRef />} />
-        <Route path="/useid" element={<UseId />} />
-        <Route path="/propsdrilling" element={<PropsDrilling />} />
-      </Routes>
       <ContextProvider>
-        <Home/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/forwardref" element={<ForwardRef />} />
+          <Route path="/useid" element={<UseId />} />
+          <Route path="/propsdrilling" element={<PropsDrilling />} />
+        </Routes>
       </ContextProvider>
     </>
+    
   )
 }
 

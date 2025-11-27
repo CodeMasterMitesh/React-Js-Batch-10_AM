@@ -9,6 +9,7 @@ import { ForwardRef } from './components/hooks/forwardRef.jsx';
 import { UseId } from './components/hooks/UseId.jsx';
 import { PropsDrilling } from './components/hooks/PropsDrilling.jsx';
 import { ContextProvider } from './components/hooks/ContextApi.jsx';
+import Increment from './components/hooks/useReducer.jsx';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/forwardref" element={<ForwardRef />} />
           <Route path="/useid" element={<UseId />} />
           <Route path="/propsdrilling" element={<PropsDrilling />} />
+          <Route path="/increment" element={<Increment />} />
         </Routes>
       </ContextProvider>
     </>

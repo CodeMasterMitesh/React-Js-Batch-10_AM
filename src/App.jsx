@@ -10,6 +10,7 @@ import { UseId } from './components/hooks/UseId.jsx';
 import { PropsDrilling } from './components/hooks/PropsDrilling.jsx';
 import { ContextProvider } from './components/hooks/ContextApi.jsx';
 import Increment from './components/hooks/useReducer.jsx';
+import { Company } from './pages/Company.jsx';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/company" element={<Company />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/forwardref" element={<ForwardRef />} />
           <Route path="/useid" element={<UseId />} />

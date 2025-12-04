@@ -12,6 +12,7 @@ import { ContextProvider } from './components/hooks/ContextApi.jsx';
 import Increment from './components/hooks/useReducer.jsx';
 import { Company } from './pages/Company.jsx';
 import Memo from './components/hooks/Memo.jsx';
+import { UseMemo } from './components/hooks/UseMemo.jsx';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
           <Route path="/propsdrilling" element={<PropsDrilling />} />
           <Route path="/increment" element={<Increment />} />
           <Route path="/memo" element={<Memo />} />
+          <Route path="/usememo" element={<UseMemo />} />
         </Routes>
       </ContextProvider>
     </>

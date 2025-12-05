@@ -2,10 +2,17 @@
 import { useMemo, useState } from "react";
 
 const HeavyCalculation = () => {
-    let i = 0;
-    while (i < 10000) i++;
+    const sum = () => {
+         let i = 0;
+         while (i <= 1000000000) i++;
+         i += 1;
+         return i;
+    }
+    // const result = sum();
 
-    const result = i++;
+    const result = useMemo(() =>{
+        return sum();
+    }, []);
     return <div>Heavy Calculation Result: {result}</div>;
 };
 

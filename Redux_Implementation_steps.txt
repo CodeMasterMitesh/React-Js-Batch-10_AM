@@ -1,0 +1,4 @@
+Step 1) Install Redux from NPM : npm install @reduxjs/toolkit
+step 2) npm install react-redux
+Step 3) Create Store For Centalize Logic for whole application
+Step 4) Inside main.jsx <App/> Wrap with <Provider />

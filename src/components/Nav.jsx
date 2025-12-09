@@ -31,34 +31,13 @@ function Nav({ logoName }) {
 
       {/* Main Navbar */}
       <nav className={style.navbar}>
-        {/* Logo & Mobile Menu */}
-        <div className={style.leftSection}>
-          <button 
-            className={style.mobileMenuBtn}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-          
+
+        {/* Right Section */}
+        <div className={style.rightSection}>
           <div className={style.logo}>
             <div className={style.logoIcon}>🛍️</div>
             <h1>{logoName}</h1>
           </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className={style.centerSection}>
-          <nav className={style.mainNav}>
-            {categories.slice(0, 6).map((category) => (
-              <a key={category} href="/" className={style.navLink}>
-                {category}
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        {/* Right Section */}
-        <div className={style.rightSection}>
           {/* Search Bar */}
           <form className={style.search} onSubmit={handleSearch}>
             <div className={style.searchContainer}>

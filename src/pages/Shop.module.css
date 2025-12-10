@@ -1,0 +1,60 @@
+.shopPage {
+    padding: 3rem 2rem;
+    min-height: 60vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pageHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pageHeader h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.pageHeader p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.comingSoon {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.comingSoon h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.comingSoon p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

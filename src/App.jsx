@@ -5,6 +5,8 @@ import viteLogo from '/vite.svg'
 import { About } from './pages/about.jsx'
 import { Home } from './pages/Home.Jsx'
 import { Contact } from './pages/Contact.jsx';
+import { Shop } from './pages/Shop.jsx';
+import { Blog } from './pages/Blog.jsx';
 import { ForwardRef } from './components/hooks/forwardRef.jsx';
 import { UseId } from './components/hooks/UseId.jsx';
 import { PropsDrilling } from './components/hooks/PropsDrilling.jsx';
@@ -22,28 +24,36 @@ const router = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     children: [
-       {
-        path: "/about",
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "shop",
+        element: <Shop />,
+      },
+      {
+        path: "about",
         element: <About />,
       },
       {
-        path: "/contact",
+        path: "blog",
+        element: <Blog />,
+      },
+      {
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/company",
+        path: "company",
         element: <Company />,
       },
       {
-        path: "/forwardRef",
+        path: "forwardRef",
         element: <ForwardRef />,
       },
       {
-        path: "/dogsapi",
+        path: "dogsapi",
         element: <DogsApi />,
       },
     ]

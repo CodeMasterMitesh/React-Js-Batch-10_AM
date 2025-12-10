@@ -7,7 +7,9 @@ export const AppLayout = () => {
     return (
         <>
             <Nav />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
             <Footer />
         </>
     );

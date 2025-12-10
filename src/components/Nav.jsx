@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import style from "./Nav.module.css";
-import { ShoppingCart, MapPin, User, Search, Heart, Menu, X, Bell } from "lucide-react";
+import { ShoppingCart, User, Search, Heart, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
-function Nav({ logoName }) {
-  const [currency, setCurrency] = useState("INR");
+function Nav({ logoName = "ShopHub" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [showNotifications, setShowNotifications] = useState(false);
 
-  const categories = [
-    "Electronics", "Fashion", "Home & Kitchen", "Beauty", "Sports", 
-    "Books", "Toys", "Automotive", "Grocery"
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/shop", label: "Shop" },
+    { path: "/about", label: "About" },
+    { path: "/blog", label: "Blog" },
+    { path: "/contact", label: "Contact" },
   ];
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       console.log("Searching for:", searchQuery);
-      // Add your search logic here
     }
   };
 
@@ -26,94 +26,75 @@ function Nav({ logoName }) {
     <header className={style.header}>
       {/* Top Banner */}
       <div className={style.topBanner}>
-        <p>🎉 Free shipping on orders over $50! Shop now</p>
+        <p>✨ Free Shipping on Orders Over $50 | 30-Day Returns | Shop Now!</p>
       </div>
 
       {/* Main Navbar */}
       <nav className={style.navbar}>
+        <div className={style.navContainer}>
+          {/* Mobile Menu Button */}
+          <button 
+            className={style.mobileMenuBtn}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
 
-        {/* Right Section */}
-        <div className={style.rightSection}>
-          <div className={style.logo}>
+          {/* Logo */}
+          <Link to="/" className={style.logo}>
             <div className={style.logoIcon}>🛍️</div>
             <h1>{logoName}</h1>
+          </Link>
+
+          {/* Navigation Links */}
+          <div className={style.navLinks}>
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) => 
+                  `${style.navLink} ${isActive ? style.activeLink : ""}`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </div>
+
           {/* Search Bar */}
-          <form className={style.search} onSubmit={handleSearch}>
+          <form className={style.searchForm} onSubmit={handleSearch}>
             <div className={style.searchContainer}>
               <Search size={18} className={style.searchIcon} />
               <input
                 type="text"
-                placeholder="Search for products, brands and more..."
+                placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={style.searchInput}
               />
-              <button type="submit" className={style.searchBtn}>
-                Search
-              </button>
             </div>
           </form>
 
           {/* User Actions */}
-          <div className={style.actions}>
-            {/* Location */}
-            <div className={style.location}>
-              <MapPin size={16} />
-              <div className={style.locationText}>
-                <span className={style.deliverTo}>Deliver to</span>
-                <span className={style.locationName}>Ahmedabad</span>
-              </div>
-            </div>
-
-            {/* Notifications */}
-            <div className={style.notificationWrapper}>
-              <button 
-                className={style.actionBtn}
-                onClick={() => setShowNotifications(!showNotifications)}
-              >
-                <Bell size={20} />
-                <span className={style.notificationBadge}>3</span>
-              </button>
-            </div>
+          <div className={style.userActions}>
+            {/* Account */}
+            <Link to="/account" className={style.actionBtn}>
+              <User size={22} />
+              <span className={style.actionLabel}>Account</span>
+            </Link>
 
             {/* Wishlist */}
-            <button className={style.actionBtn}>
-              <Heart size={20} />
-              <span>Wishlist</span>
-            </button>
-
-            {/* Account */}
-            <div className={style.account}>
-              <User size={18} />
-              <div className={style.accountText}>
-                <span className={style.greeting}>Hello,</span>
-                <span className={style.signIn}>Sign in</span>
-              </div>
-            </div>
-
-            {/* Currency */}
-            <select
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value)}
-              className={style.currencySelect}
-            >
-              <option value="INR">₹ INR</option>
-              <option value="USD">$ USD</option>
-              <option value="EUR">€ EUR</option>
-            </select>
+            <Link to="/wishlist" className={style.actionBtn}>
+              <Heart size={22} />
+              <span className={style.actionLabel}>Wishlist</span>
+            </Link>
 
             {/* Cart */}
-            <div className={style.cart}>
-              <div className={style.cartIcon}>
-                <ShoppingCart size={22} />
-                <span className={style.cartCount}>5</span>
-              </div>
-              <div className={style.cartText}>
-                <span className={style.cartLabel}>Cart</span>
-                <span className={style.cartAmount}>₹2,499</span>
-              </div>
-            </div>
+            <Link to="/cart" className={style.cartBtn}>
+              <ShoppingCart size={22} />
+              <span className={style.cartBadge}>3</span>
+              <span className={style.actionLabel}>Cart</span>
+            </Link>
           </div>
         </div>
       </nav>
@@ -121,46 +102,20 @@ function Nav({ logoName }) {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className={style.mobileMenu}>
-          <div className={style.mobileCategories}>
-            {categories.map((category) => (
-              <a key={category} href="/" className={style.mobileNavLink}>
-                {category}
-              </a>
-            ))}
-          </div>
-          <div className={style.mobileActions}>
-            <a href="/" className={style.mobileAction}>
-              <User size={18} />
-              <span>My Account</span>
-            </a>
-            <a href="/" className={style.mobileAction}>
-              <Heart size={18} />
-              <span>Wishlist</span>
-            </a>
-            <a href="/" className={style.mobileAction}>
-              <Bell size={18} />
-              <span>Notifications</span>
-            </a>
-          </div>
-        </div>
-      )}
-
-      {/* Category Bar */}
-      <div className={style.categoryBar}>
-        <div className={style.categoryContainer}>
-          {categories.map((category) => (
-            <a key={category} href="/" className={style.categoryLink}>
-              {category}
-            </a>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) => 
+                `${style.mobileNavLink} ${isActive ? style.activeMobileLink : ""}`
+              }
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
           ))}
         </div>
-      </div>
-      <div>
-        <Link to="/about">About</Link>
-        <NavLink to="/contact" className={({ isActive }) => (isActive ? style.active : "")}>
-          Contact
-        </NavLink>
-      </div>
+      )}
     </header>
   );
 }

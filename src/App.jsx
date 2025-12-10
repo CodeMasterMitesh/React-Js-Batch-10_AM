@@ -1,30 +1,47 @@
-import { useState } from 'react'
-import { RouterProvider, Routes, Route, createBrowserRouter } from 'react-router-dom';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { About } from './pages/about.jsx'
-import { Home } from './pages/Home.Jsx'
-import { Contact } from './pages/Contact.jsx';
-import { Shop } from './pages/Shop.jsx';
-import { Blog } from './pages/Blog.jsx';
-import { ForwardRef } from './components/hooks/forwardRef.jsx';
-import { UseId } from './components/hooks/UseId.jsx';
-import { PropsDrilling } from './components/hooks/PropsDrilling.jsx';
-import { ContextProvider } from './components/hooks/ContextApi.jsx';
-import { Company } from './pages/Company.jsx';
-import Memo from './components/hooks/Memo.jsx';
-import { UseMemo } from './components/hooks/UseMemo.jsx';
-import UseReducerHook from './components/hooks/useReducer.jsx';
-import Counter from './components/redux/BasicExample.jsx';
-import { AppLayout } from './AppLayout.jsx';
-import { DogsApi } from './components/hooks/DogsApi.jsx';
-import { ErrorPage } from './pages/ErrorPage.jsx';
+import React, { Suspense, lazy } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ContextProvider } from "./components/hooks/ContextApi.jsx";
+import { ModalProvider } from "./components/ModalContext.jsx";
+import { AppLayout } from "./AppLayout.jsx";
+import { ErrorPage } from "./pages/ErrorPage.jsx";
+
+const Home = lazy(() =>
+  import("./pages/Home.jsx").then((m) => ({ default: m.Home })),
+);
+const Shop = lazy(() =>
+  import("./pages/Shop.jsx").then((m) => ({ default: m.Shop })),
+);
+const About = lazy(() =>
+  import("./pages/about.jsx").then((m) => ({ default: m.About })),
+);
+const Blog = lazy(() =>
+  import("./pages/Blog.jsx").then((m) => ({ default: m.Blog })),
+);
+const Contact = lazy(() =>
+  import("./pages/Contact.jsx").then((m) => ({ default: m.Contact })),
+);
+const Account = lazy(() =>
+  import("./pages/Account.jsx").then((m) => ({ default: m.Account })),
+);
+const Company = lazy(() =>
+  import("./pages/Company.jsx").then((m) => ({ default: m.Company })),
+);
+const ForwardRef = lazy(() =>
+  import("./components/hooks/forwardRef.jsx").then((m) => ({
+    default: m.ForwardRef,
+  })),
+);
+const DogsApi = lazy(() =>
+  import("./components/hooks/DogsApi.jsx").then((m) => ({
+    default: m.DogsApi,
+  })),
+);
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement : <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -47,6 +64,10 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
+        path: "account",
+        element: <Account />,
+      },
+      {
         path: "company",
         element: <Company />,
       },
@@ -58,17 +79,26 @@ const router = createBrowserRouter([
         path: "dogsapi",
         element: <DogsApi />,
       },
-    ]
+    ],
   },
- 
 ]);
 
 function App() {
   return (
     <ContextProvider>
-      <RouterProvider router={router} />
+      <ModalProvider>
+        <Suspense
+          fallback={
+            <div style={{ padding: "2rem", textAlign: "center" }}>
+              Loading...
+            </div>
+          }
+        >
+          <RouterProvider router={router} />
+        </Suspense>
+      </ModalProvider>
     </ContextProvider>
   );
 }
 
-export default App
+export default App;

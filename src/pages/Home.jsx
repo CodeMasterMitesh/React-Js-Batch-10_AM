@@ -9,17 +9,17 @@ import VoucherPromo from "../components/VoucherPromo";
 import { ContextProvider } from "../components/hooks/ContextApi.jsx";
 
 export const Home = () => {
-    return (
-        <div>
-            <ContextProvider>
-                <HeroBanner />
-                <ProductCategory />
-                <DealOfDay />
-                <BestSellers />
-                <FeaturedProducts />
-                <ProductOnSale />
-                <VoucherPromo />
-            </ContextProvider>
-        </div>
-    );
+  return (
+    <div>
+      <ContextProvider>
+        <HeroBanner />
+        <ProductCategory />
+        <DealOfDay />
+        <BestSellers />
+        <FeaturedProducts />
+        <ProductOnSale />
+        <VoucherPromo />
+      </ContextProvider>
+    </div>
+  );
 };

@@ -1,379 +1,380 @@
 .voucherSection {
-    padding: 4rem 2rem;
-    background: white;
+  padding: 4rem 2rem;
+  background: white;
 }
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .sectionHeader {
-    text-align: center;
-    margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .titleWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .giftIcon {
-    color: #667eea;
-    animation: bounce 2s infinite;
+  color: #667eea;
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .sectionHeader h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
 .sectionHeader p {
-    font-size: 1.1rem;
-    color: #666;
+  font-size: 1.1rem;
+  color: #666;
 }
 
 .countdownBanner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
 }
 
 .countdownContent {
-    text-align: center;
-    color: white;
+  text-align: center;
+  color: white;
 }
 
 .countdownContent h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .countdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .timeBox {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
 }
 
 .timeValue {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
 .timeLabel {
-    font-size: 0.85rem;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .separator {
-    font-size: 2rem;
-    font-weight: 700;
-    opacity: 0.7;
+  font-size: 2rem;
+  font-weight: 700;
+  opacity: 0.7;
 }
 
 .voucherGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .voucherCard {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .voucherCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-    border-color: #667eea;
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  border-color: #667eea;
 }
 
 .voucherHeader {
-    padding: 2rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
 }
 
 .voucherIcon {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .discountBadge {
-    background: rgba(255, 255, 255, 0.95);
-    color: #667eea;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  color: #667eea;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .voucherBody {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .voucherTitle {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.75rem;
 }
 
 .voucherDesc {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.5;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
 }
 
 .minSpend {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #667eea;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
 }
 
 .codeSection {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .codeBox {
-    flex: 1;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 1rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 2px dashed #667eea;
+  flex: 1;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px dashed #667eea;
 }
 
 .codeLabel {
-    font-size: 0.8rem;
-    color: #666;
-    font-weight: 600;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
 }
 
 .code {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #667eea;
-    letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #667eea;
+  letter-spacing: 2px;
 }
 
 .copyBtn {
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .copyBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
 }
 
 .validity {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #888;
-    font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888;
+  font-size: 0.85rem;
 }
 
 .ctaBanner {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 16px;
-    padding: 3rem 2rem;
-    text-align: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
 .ctaContent h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 .ctaContent p {
-    color: #666;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .emailForm {
-    display: flex;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .emailInput {
-    flex: 1;
-    padding: 1rem 1.5rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .emailInput:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .subscribeBtn {
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .subscribeBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
 }
 
 @media (max-width: 768px) {
-    .voucherSection {
-        padding: 2rem 1rem;
-    }
+  .voucherSection {
+    padding: 2rem 1rem;
+  }
 
-    .sectionHeader h2 {
-        font-size: 2rem;
-    }
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
 
-    .countdownContent h3 {
-        font-size: 1.5rem;
-    }
+  .countdownContent h3 {
+    font-size: 1.5rem;
+  }
 
-    .countdown {
-        gap: 0.5rem;
-    }
+  .countdown {
+    gap: 0.5rem;
+  }
 
-    .timeBox {
-        padding: 0.75rem 1rem;
-        min-width: 80px;
-    }
+  .timeBox {
+    padding: 0.75rem 1rem;
+    min-width: 80px;
+  }
 
-    .timeValue {
-        font-size: 2rem;
-    }
+  .timeValue {
+    font-size: 2rem;
+  }
 
-    .voucherGrid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+  .voucherGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 
-    .emailForm {
-        flex-direction: column;
-    }
+  .emailForm {
+    flex-direction: column;
+  }
 
-    .subscribeBtn {
-        width: 100%;
-    }
+  .subscribeBtn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    .titleWrapper {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .titleWrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    .codeSection {
-        flex-direction: column;
-    }
+  .codeSection {
+    flex-direction: column;
+  }
 
-    .copyBtn {
-        width: 100%;
-        justify-content: center;
-    }
+  .copyBtn {
+    width: 100%;
+    justify-content: center;
+  }
 
-    .countdownBanner {
-        padding: 1.5rem 1rem;
-    }
+  .countdownBanner {
+    padding: 1.5rem 1rem;
+  }
 
-    .timeBox {
-        padding: 0.5rem 0.75rem;
-        min-width: 70px;
-    }
+  .timeBox {
+    padding: 0.5rem 0.75rem;
+    min-width: 70px;
+  }
 
-    .timeValue {
-        font-size: 1.5rem;
-    }
+  .timeValue {
+    font-size: 1.5rem;
+  }
 
-    .timeLabel {
-        font-size: 0.7rem;
-    }
+  .timeLabel {
+    font-size: 0.7rem;
+  }
 }

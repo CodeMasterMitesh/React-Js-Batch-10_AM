@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import style from "./HeroBanner.module.css";
-import { ChevronLeft, ChevronRight, ShoppingBag, TrendingUp, Award } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ShoppingBag,
+  TrendingUp,
+  Award,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const slides = [
@@ -8,32 +14,38 @@ const slides = [
     id: 1,
     title: "Summer Collection 2024",
     subtitle: "New Arrivals",
-    description: "Discover the latest trends in fashion and style. Up to 50% off on selected items.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop",
+    description:
+      "Discover the latest trends in fashion and style. Up to 50% off on selected items.",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop",
     cta: "Shop Now",
     ctaLink: "/shop",
-    badge: "50% OFF"
+    badge: "50% OFF",
   },
   {
     id: 2,
     title: "Tech Essentials",
     subtitle: "Upgrade Your Lifestyle",
-    description: "Get the latest gadgets and electronics at unbeatable prices. Limited time offer!",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=600&fit=crop",
+    description:
+      "Get the latest gadgets and electronics at unbeatable prices. Limited time offer!",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=600&fit=crop",
     cta: "Explore Now",
     ctaLink: "/shop",
-    badge: "NEW"
+    badge: "NEW",
   },
   {
     id: 3,
     title: "Home & Living",
     subtitle: "Transform Your Space",
-    description: "Beautiful furniture and decor to make your house a home. Free shipping available.",
-    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&h=600&fit=crop",
+    description:
+      "Beautiful furniture and decor to make your house a home. Free shipping available.",
+    image:
+      "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&h=600&fit=crop",
     cta: "View Collection",
     ctaLink: "/shop",
-    badge: "FREE SHIPPING"
-  }
+    badge: "FREE SHIPPING",
+  },
 ];
 
 const HeroBanner = () => {
@@ -92,16 +104,16 @@ const HeroBanner = () => {
                 <div className={style.contentWrapper}>
                   {/* Badge */}
                   <div className={style.badge}>{slide.badge}</div>
-                  
+
                   {/* Subtitle */}
                   <p className={style.subtitle}>{slide.subtitle}</p>
-                  
+
                   {/* Title */}
                   <h1 className={style.title}>{slide.title}</h1>
-                  
+
                   {/* Description */}
                   <p className={style.description}>{slide.description}</p>
-                  
+
                   {/* CTA Button */}
                   <Link to={slide.ctaLink} className={style.ctaButton}>
                     <ShoppingBag size={20} />
@@ -114,14 +126,14 @@ const HeroBanner = () => {
         ))}
 
         {/* Navigation Arrows */}
-        <button 
+        <button
           className={`${style.navButton} ${style.prevButton}`}
           onClick={prevSlide}
           aria-label="Previous slide"
         >
           <ChevronLeft size={30} />
         </button>
-        <button 
+        <button
           className={`${style.navButton} ${style.nextButton}`}
           onClick={nextSlide}
           aria-label="Next slide"

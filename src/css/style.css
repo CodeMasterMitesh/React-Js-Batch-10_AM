@@ -1,7 +1,7 @@
-#root{
+#root {
   padding: 0px !important;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -42,7 +42,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-nav{
+nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -50,23 +50,23 @@ nav{
   box-shadow: 0px 2px 5px #000000;
   padding: 20px;
 }
-nav .logo h1{
+nav .logo h1 {
   font-size: 25px;
 }
-nav ul{
+nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav ul li{
+nav ul li {
   margin: 5px;
 }
-nav ul li a{
+nav ul li a {
   font-size: 20px;
   font-weight: bold;
   color: black;
 }
-#form{
+#form {
   width: 50%;
   margin: auto;
   margin-top: 20px;
@@ -74,27 +74,29 @@ nav ul li a{
   box-shadow: 0px 2px 5px #000000;
   border-radius: 10px;
 }
-#form form{
+#form form {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
 }
-#form form label{
+#form form label {
   margin: 10px 0px 5px 0px;
   font-weight: bold;
 }
-#form form input, #form form textarea{
+#form form input,
+#form form textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 16px;
 }
-#form form input:focus, #form form textarea:focus{
+#form form input:focus,
+#form form textarea:focus {
   outline: none;
   border: 2px solid #646cff;
 }
-#form form > [type="submit"]{
+#form form > [type="submit"] {
   width: 30%;
   margin: auto;
   text-align: center;

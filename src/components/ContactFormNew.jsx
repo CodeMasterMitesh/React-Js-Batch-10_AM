@@ -6,7 +6,7 @@ export const ContactFormNew = () => {
     name: "",
     lastname: "",
     email: "",
-    mobile: ""
+    mobile: "",
   });
 
   const [submittedData, setSubmittedData] = useState(null);
@@ -17,7 +17,7 @@ export const ContactFormNew = () => {
     // console.log(name,value);
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -76,11 +76,11 @@ export const ContactFormNew = () => {
 
         <input type="submit" value="Submit" />
       </form>
-      {submittedData && <ShowData {...submittedData}/>}
+      {submittedData && <ShowData {...submittedData} />}
     </div>
   );
 };
-export const ShowData = ({name,lastname,email,mobile}) =>{
+export const ShowData = ({ name, lastname, email, mobile }) => {
   // console.log(name);
   return (
     <>
@@ -90,4 +90,4 @@ export const ShowData = ({name,lastname,email,mobile}) =>{
       <p>Mobile Number Is {mobile}</p>
     </>
   );
-}
+};

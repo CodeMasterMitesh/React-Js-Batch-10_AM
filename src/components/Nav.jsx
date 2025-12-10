@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import style from "./Nav.module.css";
 import { ShoppingCart, User, Search, Heart, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
+import { useModal } from "./ModalContext";
 
 function Nav({ logoName = "ShopHub" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { openCart, openAccount, cartItems } = useModal();
+
+  const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -33,7 +37,7 @@ function Nav({ logoName = "ShopHub" }) {
       <nav className={style.navbar}>
         <div className={style.navContainer}>
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className={style.mobileMenuBtn}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -53,7 +57,7 @@ function Nav({ logoName = "ShopHub" }) {
               <NavLink
                 key={link.path}
                 to={link.path}
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                   `${style.navLink} ${isActive ? style.activeLink : ""}`
                 }
               >
@@ -79,10 +83,14 @@ function Nav({ logoName = "ShopHub" }) {
           {/* User Actions */}
           <div className={style.userActions}>
             {/* Account */}
-            <Link to="/account" className={style.actionBtn}>
+            <button
+              type="button"
+              className={style.actionBtn}
+              onClick={() => openAccount("login")}
+            >
               <User size={22} />
               <span className={style.actionLabel}>Account</span>
-            </Link>
+            </button>
 
             {/* Wishlist */}
             <Link to="/wishlist" className={style.actionBtn}>
@@ -91,11 +99,11 @@ function Nav({ logoName = "ShopHub" }) {
             </Link>
 
             {/* Cart */}
-            <Link to="/cart" className={style.cartBtn}>
+            <button type="button" className={style.cartBtn} onClick={openCart}>
               <ShoppingCart size={22} />
-              <span className={style.cartBadge}>3</span>
+              <span className={style.cartBadge}>{cartCount}</span>
               <span className={style.actionLabel}>Cart</span>
-            </Link>
+            </button>
           </div>
         </div>
       </nav>
@@ -107,7 +115,7 @@ function Nav({ logoName = "ShopHub" }) {
             <NavLink
               key={link.path}
               to={link.path}
-              className={({ isActive }) => 
+              className={({ isActive }) =>
                 `${style.mobileNavLink} ${isActive ? style.activeMobileLink : ""}`
               }
               onClick={() => setIsMenuOpen(false)}

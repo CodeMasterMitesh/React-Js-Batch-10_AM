@@ -11,10 +11,7 @@ export const ProductGallery = ({ name, type }) => {
       <h2 className={style.heading}>{name}</h2>
       <div className={style.gallery_grid}>
         {filteredData.map((product, index) => (
-          <ProductCard
-            key={index}
-            product={product}
-          />
+          <ProductCard key={index} product={product} />
         ))}
       </div>
     </section>
@@ -36,6 +33,7 @@ const ProductCard = ({ product }) => {
             src={`../images/${product.image}`}
             alt={product.title}
             className={style.image}
+            loading="lazy"
           />
           <div className={style.card_overlay}>
             <button
@@ -74,12 +72,19 @@ const ProductCard = ({ product }) => {
 
       {/* === MODAL === */}
       {showModal && (
-        <div className={style.modal_backdrop} onClick={() => setShowModal(false)}>
-          <div className={style.modal_content} onClick={(e) => e.stopPropagation()}>
+        <div
+          className={style.modal_backdrop}
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className={style.modal_content}
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={`../images/${product.image}`}
               alt={product.title}
               className={style.modal_img}
+              loading="lazy"
             />
             <h2>{product.title}</h2>
             <p>{product.text}</p>

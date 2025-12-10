@@ -12,8 +12,8 @@ export const LearnUseEffect = () => {
   // ✅ EXAMPLE 2: Run once on mount (like componentDidMount)
   // Dependency: [] - runs only once when component mounts
   useEffect(() => {
-    console.log('Component mounted!');
-    return () => console.log('Component will unmount!');
+    console.log("Component mounted!");
+    return () => console.log("Component will unmount!");
   }, []);
 
   // ✅ EXAMPLE 3: Proper timer with cleanup
@@ -25,25 +25,34 @@ export const LearnUseEffect = () => {
 
     // Cleanup function - runs before next effect or on unmount
     return () => {
-      console.log('Cleaning up timer');
+      console.log("Cleaning up timer");
       clearInterval(timer);
     };
   }, [count]); // Re-run when count changes
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h2>useEffect Examples</h2>
-      <button 
+      <button
         onClick={() => setCount(count + 1)}
-        style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
+        style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
       >
         Click Me
       </button>
-      <p style={{ fontSize: '18px', marginTop: '10px' }}>
+      <p style={{ fontSize: "18px", marginTop: "10px" }}>
         Button clicked <strong>{count}</strong> times
       </p>
-      <div style={{ marginTop: '20px', padding: '10px', background: '#f0f0f0', borderRadius: '5px' }}>
-        <p><strong>Check browser console for:</strong></p>
+      <div
+        style={{
+          marginTop: "20px",
+          padding: "10px",
+          background: "#f0f0f0",
+          borderRadius: "5px",
+        }}
+      >
+        <p>
+          <strong>Check browser console for:</strong>
+        </p>
         <ul>
           <li>Mount/unmount logs</li>
           <li>Timer logs every 2 seconds</li>

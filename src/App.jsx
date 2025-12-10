@@ -18,11 +18,13 @@ import UseReducerHook from './components/hooks/useReducer.jsx';
 import Counter from './components/redux/BasicExample.jsx';
 import { AppLayout } from './AppLayout.jsx';
 import { DogsApi } from './components/hooks/DogsApi.jsx';
+import { ErrorPage } from './pages/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement : <ErrorPage/>,
     children: [
       {
         index: true,
@@ -62,8 +64,6 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <ContextProvider>
       <RouterProvider router={router} />
@@ -72,17 +72,3 @@ function App() {
 }
 
 export default App
-
-// {/* <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/company" element={<Company />} />
-//         <Route path="/contact" element={<Contact />} />
-//         <Route path="/forwardref" element={<ForwardRef />} />
-//         <Route path="/useid" element={<UseId />} />
-//         <Route path="/propsdrilling" element={<PropsDrilling />} />
-//         <Route path="/usereducerhook" element={<UseReducerHook />} />
-//         <Route path="/memo" element={<Memo />} />
-//         <Route path="/usememo" element={<UseMemo />} />
-//         <Route path="/counter" element={<Counter />} />
-//       </Routes> */}

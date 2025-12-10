@@ -49,6 +49,7 @@ function Nav({ logoName = "ShopHub" }) {
           {/* Navigation Links */}
           <div className={style.navLinks}>
             {navLinks.map((link) => (
+              // console.log(link.path),
               <NavLink
                 key={link.path}
                 to={link.path}

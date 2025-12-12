@@ -4,6 +4,7 @@ import { ContextProvider } from "./components/hooks/ContextApi.jsx";
 import { ModalProvider } from "./components/ModalContext.jsx";
 import { AppLayout } from "./AppLayout.jsx";
 import { ErrorPage } from "./pages/ErrorPage.jsx";
+import { NewsApi } from "./components/NewsApi.jsx";
 
 const Home = lazy(() =>
   import("./pages/Home.jsx").then((m) => ({ default: m.Home })),
@@ -12,7 +13,7 @@ const Shop = lazy(() =>
   import("./pages/Shop.jsx").then((m) => ({ default: m.Shop })),
 );
 const About = lazy(() =>
-  import("./pages/about.jsx").then((m) => ({ default: m.About })),
+  import("./pages/About.jsx").then((m) => ({ default: m.About })),
 );
 const Blog = lazy(() =>
   import("./pages/Blog.jsx").then((m) => ({ default: m.Blog })),
@@ -27,7 +28,7 @@ const Company = lazy(() =>
   import("./pages/Company.jsx").then((m) => ({ default: m.Company })),
 );
 const ForwardRef = lazy(() =>
-  import("./components/hooks/forwardRef.jsx").then((m) => ({
+  import("./components/hooks/ForwardRef.jsx").then((m) => ({
     default: m.ForwardRef,
   })),
 );
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+        loader: NewsApi,
       },
       {
         path: "contact",

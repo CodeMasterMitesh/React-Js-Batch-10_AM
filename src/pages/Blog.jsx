@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Blog.module.css";
 import { Calendar, Clock, User, ArrowRight, Search } from "lucide-react";
+import { useLoaderData } from "react-router-dom";
 
 export const Blog = () => {
+  const newsdata = useLoaderData();
+  console.log("News Data:", newsdata);
+  
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = [
@@ -206,7 +210,30 @@ export const Blog = () => {
           </div>
         </div>
       </section>
-
+      <section className={styles.newsSection}>
+        <div className={styles.container}>
+          <h2>News Articles from API</h2>
+          {newsdata && newsdata.results && newsdata.results.length > 0 ? (
+            <div className={styles.newsGrid}>
+              {newsdata.results.map((item) => (
+                <div key={item.link} className={styles.newsCard}>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  {item.image_url && (
+                    <img src={item.image_url} alt={item.title} />
+                  )}
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    Read Full Article
+                  </a>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>No news data available. Please check your API key.</p>
+          )}
+        </div>
+      </section>
+      
       {/* Newsletter Section */}
       <section className={styles.newsletterSection}>
         <div className={styles.container}>

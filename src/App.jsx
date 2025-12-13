@@ -5,6 +5,7 @@ import { ModalProvider } from "./components/ModalContext.jsx";
 import { AppLayout } from "./AppLayout.jsx";
 import { ErrorPage } from "./pages/ErrorPage.jsx";
 import { NewsApi } from "./components/NewsApi.jsx";
+import { ContactData } from "./pages/Contact.jsx";
 
 const Home = lazy(() =>
   import("./pages/Home.jsx").then((m) => ({ default: m.Home })),
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+        action :ContactData,
       },
       {
         path: "account",

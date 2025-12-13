@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import styles from "./Contact.module.css";
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
-import { Form, useActionData } from "react-router-dom";
 
-export const ContactData = async ({request}) =>{
-  // console.log(request);
-  const res = await request.formData();
-  // console.log(res);
-  const data = Object.fromEntries(res);
-  // console.log(data);
-  const name = data.name;
-  // console.log(data);
-  return data;
-}
 export const Contact = () => {
-  const actionData = useActionData();
-  // console.log(actionData);
-  // console.log(actionData.name);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Thank you for contacting us! We'll get back to you soon.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
+
   const contactInfo = [
     {
       icon: <Phone size={28} />,
@@ -89,13 +96,15 @@ export const Contact = () => {
                 </p>
               </div>
 
-              <Form action="/contact" method="POST" className={styles.contactForm}>
+              <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">Full Name *</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="John Doe"
                     required
                   />
@@ -107,6 +116,8 @@ export const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="john@example.com"
                     required
                   />
@@ -118,6 +129,8 @@ export const Contact = () => {
                     type="text"
                     id="subject"
                     name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
                     placeholder="How can we help?"
                     required
                   />
@@ -128,6 +141,8 @@ export const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Tell us more about your inquiry..."
                     rows="5"
                     required
@@ -138,17 +153,8 @@ export const Contact = () => {
                   <Send size={20} />
                   Send Message
                 </button>
-              </Form>
-              {actionData ? (
-              <>
-              <p>{actionData.name}</p>
-              <p>{actionData.email}</p>
-              <p>{actionData.message}</p>
-              <p>{actionData.subject}</p>
-              </>
-            ) : <p> No Data</p>}
+              </form>
             </div>
-            
 
             {/* Map & Additional Info */}
             <div className={styles.mapContainer}>

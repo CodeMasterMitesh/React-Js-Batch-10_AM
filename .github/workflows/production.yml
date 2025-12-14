@@ -1,4 +1,4 @@
-name: Deploy React (Vite) to Server
+name: ShopHub-Ecommerce-Website
 
 on:
   push:

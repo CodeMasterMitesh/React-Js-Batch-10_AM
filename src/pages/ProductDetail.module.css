@@ -1,0 +1,288 @@
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mainImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff6b6b;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+
+.thumbnails img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: #ddd;
+}
+
+.activeThumbnail {
+  border-color: #007bff !important;
+}
+
+/* Details */
+.details {
+  padding: 1rem;
+}
+
+.details h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ratingValue {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.ratingCount {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.category {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.category span {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Pricing */
+.pricing {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.currentPrice {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.originalPrice {
+  font-size: 1.25rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.discount {
+  background: #ff6b6b;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Stock Status */
+.stock {
+  margin-bottom: 1.5rem;
+}
+
+.inStock {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.outOfStock {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .actions {
+    flex-direction: column;
+  }
+}
+
+.quantityControl {
+  display: flex;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quantityControl button {
+  background: #f5f5f5;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.quantityControl button:hover:not(:disabled) {
+  background: #eee;
+}
+
+.quantityControl button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.quantityControl input {
+  width: 60px;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+.quantityControl input:focus {
+  outline: none;
+}
+
+.addToCartBtn {
+  flex: 1;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.addToCartBtn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.addToCartBtn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Specifications */
+.specifications {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.specifications h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.specifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.specifications li {
+  padding: 0.5rem 0;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.specifications li:last-child {
+  border-bottom: none;
+}
+
+.specifications strong {
+  color: #333;
+}
+
+.backBtn {
+  background: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.backBtn:hover {
+  background: #0056b3;
+}

@@ -1,36 +1,12 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Blog.module.css";
 import { Calendar, Clock, User, ArrowRight, Search } from "lucide-react";
 import { useLoaderData } from "react-router-dom";
-import {NewsApi} from "../components/NewsApi.jsx";
-import axios from "axios";
+
 export const Blog = () => {
-  // const newsdata = useLoaderData();
-  const [data, setdata] = useState([]);
-
-  const apiKey = import.meta.env.VITE_NEWS_API_KEY;
-  const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&q=sports`;
-
-  const getNewsData = async () =>{
-    try {
-      const res = await axios.get(url);
-      console.log("res:", res.data);
-      setdata(res.data);
-    } catch (error) {
-      console.error("Error fetching news data:", error);
-    }
-  }
-
-  useEffect(() => {
-  // axios.get(url).then((res)=>{
-  //   console.log("res:", res.data);
-  //   setdata(res.data);
-  //   }).catch((error)=>{
-  //     console.error("Error fetching news data:", error);
-  //   });
-    getNewsData();
-  }, []);
-
+  const newsdata = useLoaderData();
+  console.log("News Data:", newsdata);
+  
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = [
@@ -237,9 +213,9 @@ export const Blog = () => {
       <section className={styles.newsSection}>
         <div className={styles.container}>
           <h2>News Articles from API</h2>
-          {data && data.results && data.results.length > 0 ? (
+          {newsdata && newsdata.results && newsdata.results.length > 0 ? (
             <div className={styles.newsGrid}>
-              {data.results.map((item) => (
+              {newsdata.results.map((item) => (
                 <div key={item.link} className={styles.newsCard}>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>

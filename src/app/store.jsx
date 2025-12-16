@@ -1,22 +1,9 @@
 // store.js
-import { createStore } from "redux";
+import { configureStore } from '@reduxjs/toolkit';
+import counterSlice from './createSlice.jsx'; 
 
-const initialState = {
-  count: 0,
-};
+// console.log(counterSlice);
+export const store = configureStore({
+  reducer: { counter: counterSlice }  
+});
 
-const counterReducer = (state = initialState, action) => {
-  console.log("Action dispatched:", state, action);
-  switch (action.type) {
-    case "INCREMENT":
-      return { ...state, count: state.count + 1 };
-    case "DECREMENT":
-      return { ...state, count: state.count - 1 };
-    default:
-      return state;
-  }
-};
-
-const store = createStore(counterReducer);
-
-export default store;

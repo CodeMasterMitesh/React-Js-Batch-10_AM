@@ -11,6 +11,7 @@ import { NewsApi } from "./components/NewsApi.jsx";
 import { ContactData } from "./pages/Contact.jsx";
 import { AdminLogin } from "./pages/admin/AdminLogin.jsx";
 import { AdminDashboard } from "./pages/admin/AdminDashboard.jsx";
+import Counter from "./components/Counter.jsx";
 
 const Home = lazy(() =>
   import("./pages/Home.jsx").then((m) => ({ default: m.Home })),
@@ -184,6 +185,10 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
   },
+  {
+    path: "/counter",
+    element: <Counter />,
+  }
 ]);
 
 function App() {

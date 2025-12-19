@@ -59,6 +59,9 @@ const DogsApi = lazy(() =>
     default: m.DogsApi,
   })),
 );
+const Todo = lazy(() =>
+  import("./components/Todo.jsx").then((m) => ({ default: m.Todo })),
+);
 
 const router = createBrowserRouter([
   {
@@ -117,10 +120,13 @@ const router = createBrowserRouter([
         element: <ForwardRef />,
       },
       {
-        path: "dogsapi",
-        element: <DogsApi />,
+       
       },
     ],
+  },
+  {
+    path: "/todos",
+    element: <Todo />,
   },
   // Customer Auth Routes
   {

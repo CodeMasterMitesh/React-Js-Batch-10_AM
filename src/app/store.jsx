@@ -37,14 +37,26 @@ const todoAppReducer = (state = initialState, action) => {
 };
 export const store = createStore(todoAppReducer);
 
-store.dispatch({ type: ADD_TODO, payload: 'Learn Redux' });
-store.dispatch({ type: ADD_TODO, payload: 'Learn React js' });
+export const actionAddTodo = (data) => ({
+  type: ADD_TODO,
+  payload: data,
+});
+
+export const actionRemoveTodo = (index) => ({
+  type: REMOVE_TODO,
+  payload: index,
+});
+
+store.dispatch(actionAddTodo('Learn Redux'));
+store.dispatch(actionAddTodo('Learn React Js'));  
+store.dispatch(actionAddTodo('Today We Understand Redux Store Actions'));
 
 console.log(store.getState());
 
 console.log('Redux Store is working');
-store.dispatch({ type: REMOVE_TODO, payload: 1 });
-store.dispatch({ type: REMOVE_TODO, payload: 0 });
+
+// store.dispatch(actionRemoveTodo(1));
+// store.dispatch(actionRemoveTodo(0));
 
 
 console.log(store.getState());

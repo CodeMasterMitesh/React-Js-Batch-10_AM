@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./Todo.css";
 import { useSelector } from "react-redux";
-import { actionAddTodo, actionRemoveTodo } from "../app/store.jsx";
+import { actionAddTodo, actionRemoveTodo, fetchTodo } from "../app/store.jsx";
 import { useDispatch } from "react-redux";
 
 export const Todo = () => {
 
 const [todo, setTodo] = useState("");
 const todos = useSelector((state) => state.todos);
-// console.log("Todos from Redux Store:", todos);
+console.log("Todos from Redux Store:", todos);
 
 const dispatch = useDispatch();
 
@@ -17,6 +17,7 @@ const addTodo = (e) => {
     // console.log("Adding Todo:", todo);
     dispatch(actionAddTodo(todo));
 }
+
 
 const deleteTodo = (index) => {
     // console.log("Deleting Todo at index:", index);
@@ -35,18 +36,13 @@ const deleteTodo = (index) => {
                         onChange={(e) => setTodo(e.target.value)}
                     />
                     <button>Add</button>
+                    <button onClick={() => dispatch(fetchTodo())}>Get Task</button>
                 </form>
             </div>
 
             <ul className="todo-list">
-                {todos.map((item,index) => (
-                    console.log("item in list", item),
-                    <li key={index} className={item.completed ? "completed" : ""}>
-                        <input
-                            type="checkbox"
-                            checked={item.completed}
-                            onChange={() => toggleTodo(item.id)}
-                        />
+                {todos && todos.map((item,index) => (
+                    <li key={index}>
                         <span>{item}</span>
                         <button onClick={() => deleteTodo(index)}>❌</button>
                     </li>

@@ -1,27 +1,28 @@
 import { useState } from "react";
 import "./Todo.css";
-import { useSelector } from "react-redux";
-import { actionAddTodo, actionRemoveTodo, fetchTodo } from "../app/store.jsx";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addTodo as addTodoAction, removeTodo as removeTodoAction } from "../app/todoSlice.jsx";
+import { fetchTodo } from "../app/store.jsx";
 
 export const Todo = () => {
 
 const [todo, setTodo] = useState("");
-const todos = useSelector((state) => state.todos);
+const todos = useSelector((state) => state.todo.todos);
 console.log("Todos from Redux Store:", todos);
 
 const dispatch = useDispatch();
 
 const addTodo = (e) => {
     e.preventDefault();
-    // console.log("Adding Todo:", todo);
-    dispatch(actionAddTodo(todo));
+    if (todo.trim()) {
+        dispatch(addTodoAction(todo));
+        setTodo("");
+    }
 }
 
 
 const deleteTodo = (index) => {
-    // console.log("Deleting Todo at index:", index);
-    dispatch(actionRemoveTodo(index));
+    dispatch(removeTodoAction(index));
 }
     return (
         <div className="todo-container">
